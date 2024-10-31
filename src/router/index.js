@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Auth from '@/views/Auth.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
+    { path: '/', redirect: '/auth' },
+  { path: '/auth', component: Auth },
+  { path: '/home', component: HomeView },
+   
     {
       path: '/about',
       name: 'about',
